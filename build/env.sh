@@ -10,7 +10,7 @@ fi
 # Create fake Go workspace if it doesn't exist yet.
 workspace="$PWD/build/_workspace"
 root="$PWD"
-vapdir="$workspace/src/github.com/techievee"
+vapdir="$workspace/src/github.com/vapory-mining"
 if [ ! -L "$vapdir/vapash-mining-pool" ]; then
     mkdir -p "$vapdir"
     cd "$vapdir"
