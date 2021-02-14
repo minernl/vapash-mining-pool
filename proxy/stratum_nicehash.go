@@ -9,7 +9,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/techievee/ethash-mining-pool/util"
+	"github.com/vapory-mining/vapash-mining-pool/util"
 	"math/rand"
 	"strings"
 )
@@ -117,13 +117,13 @@ func (cs *Session) getNotificationResponse(s *ProxyServer, id json.RawMessage) J
 	param1 := make([]string, 3)
 	param1[0] = "mining.notify"
 	param1[1] = generateRandomString(32)
-	param1[2] = "EthereumStratum/1.0.0"
+	param1[2] = "VaporyStratum/1.0.0"
 	result[0] = param1
 	result[1] = s.Extranonce
 
 	resp := JSONRpcResp{
 		Id:      id,
-		Version: "EthereumStratum/1.0.0",
+		Version: "VaporyStratum/1.0.0",
 		Result:  result,
 		Error:   nil,
 	}
@@ -192,9 +192,9 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 			return err
 		}
 
-		if params[1] != "EthereumStratum/1.0.0" {
+		if params[1] != "VaporyStratum/1.0.0" {
 			log.Println("Unsupported stratum version from ", cs.ip)
-			return cs.sendTCPNHError(req.Id, "unsupported ethereum version")
+			return cs.sendTCPNHError(req.Id, "unsupported vapory version")
 		}
 
 		resp := cs.getNotificationResponse(s, req.Id)
@@ -267,7 +267,7 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 		}
 
 		return cs.sendJob(s, req.Id)
-	case "eth_submitLogin":
+	case "vap_submitLogin":
 		var params []string
 		err := json.Unmarshal(req.Params, &params)
 		if err != nil {
@@ -279,13 +279,13 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 			return cs.sendTCPError(req.Id, errReply)
 		}
 		return cs.sendTCPResult(req.Id, reply)
-	case "eth_getWork":
+	case "vap_getWork":
 		reply, errReply := s.handleGetWorkRPC(cs)
 		if errReply != nil {
 			return cs.sendTCPError(req.Id, errReply)
 		}
 		return cs.sendTCPResult(req.Id, &reply)
-	case "eth_submitWork":
+	case "vap_submitWork":
 		var params []string
 		err := json.Unmarshal(req.Params, &params)
 		if err != nil {
@@ -297,7 +297,7 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 			return cs.sendTCPError(req.Id, errReply)
 		}
 		return cs.sendTCPResult(req.Id, &reply)
-	case "eth_submitHashrate":
+	case "vap_submitHashrate":
 		return cs.sendTCPResult(req.Id, true)
 	default:
 		errReply := s.handleUnknownRPC(cs, req.Method)

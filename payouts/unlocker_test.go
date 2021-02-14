@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/techievee/ethash-mining-pool/rpc"
-	"github.com/techievee/ethash-mining-pool/storage"
+	"github.com/vapory-mining/vapash-mining-pool/rpc"
+	"github.com/vapory-mining/vapash-mining-pool/storage"
 )
 
 func TestMain(m *testing.M) {
@@ -132,18 +132,18 @@ func TestGetConstantinopleRewardForUncle(t *testing.T) {
 }
 
 func TestMatchCandidate(t *testing.T) {
-	gethBlock := &rpc.GetBlockReply{Hash: "0x12345A", Nonce: "0x1A"}
+	gvapBlock := &rpc.GetBlockReply{Hash: "0x12345A", Nonce: "0x1A"}
 	parityBlock := &rpc.GetBlockReply{Hash: "0x12345A", SealFields: []string{"0x0A", "0x1A"}}
 	candidate := &storage.BlockData{Nonce: "0x1a"}
 	orphan := &storage.BlockData{Nonce: "0x1abc"}
 
-	if !matchCandidate(gethBlock, candidate) {
+	if !matchCandidate(gvapBlock, candidate) {
 		t.Error("Must match with nonce")
 	}
 	if !matchCandidate(parityBlock, candidate) {
 		t.Error("Must match with seal fields")
 	}
-	if matchCandidate(gethBlock, orphan) {
+	if matchCandidate(gvapBlock, orphan) {
 		t.Error("Must not match with orphan with nonce")
 	}
 	if matchCandidate(parityBlock, orphan) {

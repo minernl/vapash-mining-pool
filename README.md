@@ -1,13 +1,13 @@
-# Ethash-mining-pool
-Highly Efficient mining pool designed for Ethash based coins
-[![Build Status](https://travis-ci.org/techievee/ethash-mining-pool.svg?branch=V2.0_Eth)](https://travis-ci.org/techievee/ethash-mining-pool) 
+# Vapash-mining-pool
+Highly Efficient mining pool designed for Vapash based coins
+[![Build Status](https://travis-ci.org/vapory-mining/vapash-mining-pool.svg?branch=V2.0_Vap)](https://travis-ci.org/vapory-mining/vapash-mining-pool) 
 
 
-![alt text](https://raw.githubusercontent.com/techievee/ethash-mining-pool/master/images/FrontEnd.png)
+![alt text](https://raw.githubusercontent.com/vapory-mining/vapash-mining-pool/master/images/FrontEnd.png)
 
 ### Features
 
-**This pool is reegineered from sammy007 open-ethereum-pool for efficiency and for better payment algorithm. This software is functional and tested and implemented in big Mining farms. Testing and bug submissions are still welcome!
+**This pool is reegineered from sammy007 open-vapory-pool for efficiency and for better payment algorithm. This software is functional and tested and implemented in big Mining farms. Testing and bug submissions are still welcome!
 
 *	Support for HTTP, SSL, Stratum, Stratum+SSL mining
 *	Detailed block stats with luck percentage and full reward
@@ -33,9 +33,9 @@ Highly Efficient mining pool designed for Ethash based coins
 ### Branches 
 **Please clone the project using the branches as  per the coin
 
-* V2.0_Eth – Ethereum pool for go version <=1.10
-*	V2.0_Eth_11 -– Ethereum pool for go version >=1.11
-*	V2.0_Etc – Ethereum Classicpool for go version <=1.10
+* V2.0_Vap – Vapory pool for go version <=1.10
+*	V2.0_Vap_11 -– Vapory pool for go version >=1.11
+*	V2.0_Etc – Vapory Classicpool for go version <=1.10
 *	V2.0_Exp – Expanse pool for go version <=1.10
 *	V2.0_Ubiq – Ubiq pool for go version <=1.10
 *	V2.0_Pirl – Pirl pool for go version <=1.10
@@ -46,7 +46,7 @@ Highly Efficient mining pool designed for Ethash based coins
 
 ### Architecture
 
-![Architecture](https://raw.githubusercontent.com/techievee/ethash-mining-pool/master/images/Architecture.PNG)
+![Architecture](https://raw.githubusercontent.com/vapory-mining/vapash-mining-pool/master/images/Architecture.PNG)
 
 
 ### Building on Linux
@@ -54,22 +54,22 @@ Highly Efficient mining pool designed for Ethash based coins
 Dependencies:
 
   * go >= 1.9 but <1.10 ( For 1.11 Refer branches)
-  * geth or parity
+  * gvap or parity
   * redis-server >= 2.8.0
   * nodejs >= 4 LTS
   * nginx
 
 **I highly recommend to use Ubuntu 16.04 LTS.**
 
-First install  [go-ethereum](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu).
+First install  [go-vapory](https://github.com/vapory/go-vapory/wiki/Installation-Instructions-for-Ubuntu).
 
 Clone & compile:
 
     git config --global http.https://gopkg.in.followRedirects true
-    git clone https://github.com/techievee/ethash-mining-pool.git
+    git clone https://github.com/vapory-mining/vapash-mining-pool.git
     <Change the branch>
     git pull
-    cd open-ethereum-pool
+    cd open-vapory-pool
     make
 
 Install redis-server.
@@ -161,7 +161,7 @@ Configuration is actually simple, just read it twice and think twice before chan
 	//Number of Go process to be used for running this software
 	"threads": 2,
 	// Used for prepend Redis instance
-	"coin": "ethereum-pplns",
+	"coin": "vapory-pplns",
 
 	"name": "main",
 
@@ -169,7 +169,7 @@ Configuration is actually simple, just read it twice and think twice before chan
 	"pplns": 1000000,
 
 	//Used for fetching the coin value from the Exchange
-	"coin-name":"ETH",
+	"coin-name":"VAP",
 
 	"proxy": {
 	    //Proxy Enabled or not
@@ -361,7 +361,7 @@ Configuration is actually simple, just read it twice and think twice before chan
 //If you want to use the NewRelic to monitor the server status and the internal status,
 //Register account with NewRelic and update the parameters here
 	"newrelicEnabled": false,
-	"newrelicName": "PROXY01_ETH_MUMBAI",
+	"newrelicName": "PROXY01_VAP_MUMBAI",
 	"newrelicKey": "b30cd005408cbe2bcef6e081dc0a7ea2fe6c6a18",
 	"newrelicVerbose": false
 }
@@ -371,7 +371,7 @@ Configuration is actually simple, just read it twice and think twice before chan
 
 ### Sample VM Configurations
 
-![Configuration](https://raw.githubusercontent.com/techievee/ethash-mining-pool/master/images/Configurations.PNG)
+![Configuration](https://raw.githubusercontent.com/vapory-mining/vapash-mining-pool/master/images/Configurations.PNG)
 
 
 

@@ -6,11 +6,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
+	"github.com/vaporyco/go-vapory/common"
+	"github.com/vaporyco/go-vapory/common/math"
 )
 
-var Ether = math.BigPow(10, 18)
+var Vapor = math.BigPow(10, 18)
 var Shannon = math.BigPow(10, 9)
 
 var pow256 = math.BigPow(2, 256)
@@ -52,7 +52,7 @@ func FormatReward(reward *big.Int) string {
 }
 
 func FormatRatReward(reward *big.Rat) string {
-	wei := new(big.Rat).SetInt(Ether)
+	wei := new(big.Rat).SetInt(Vapor)
 	reward = reward.Quo(reward, wei)
 	return reward.FloatString(8)
 }

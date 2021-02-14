@@ -7,10 +7,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/vaporyco/go-vapory/common"
 
-	"github.com/techievee/ethash-mining-pool/rpc"
-	"github.com/techievee/ethash-mining-pool/util"
+	"github.com/vapory-mining/vapash-mining-pool/rpc"
+	"github.com/vapory-mining/vapash-mining-pool/util"
 )
 
 const maxBacklog = 3

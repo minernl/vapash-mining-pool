@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/techievee/ethash-mining-pool/storage"
-	"github.com/techievee/ethash-mining-pool/util"
+	"github.com/vapory-mining/vapash-mining-pool/storage"
+	"github.com/vapory-mining/vapash-mining-pool/util"
 	"io/ioutil"
 )
 

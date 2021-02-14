@@ -5,8 +5,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/techievee/ethash-mining-pool/rpc"
-	"github.com/techievee/ethash-mining-pool/util"
+	"github.com/vapory-mining/vapash-mining-pool/rpc"
+	"github.com/vapory-mining/vapash-mining-pool/util"
 )
 
 // Allow only lowercase hexadecimal with 0x prefix

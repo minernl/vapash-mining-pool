@@ -10,7 +10,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/techievee/ethash-mining-pool/util"
+	"github.com/vapory-mining/vapash-mining-pool/util"
 )
 
 const (
@@ -113,7 +113,7 @@ func (s *ProxyServer) handleSSLTCPClient(cs *Session) error {
 func (cs *Session) handleSSLTCPMessage(s *ProxyServer, req *StratumReq) error {
 	// Handle RPC methods
 	switch req.Method {
-	case "eth_submitLogin":
+	case "vap_submitLogin":
 		var params []string
 		err := json.Unmarshal(req.Params, &params)
 		if err != nil {
@@ -125,13 +125,13 @@ func (cs *Session) handleSSLTCPMessage(s *ProxyServer, req *StratumReq) error {
 			return cs.sendSSLTCPError(req.Id, errReply)
 		}
 		return cs.sendSSLTCPResult(req.Id, reply)
-	case "eth_getWork":
+	case "vap_getWork":
 		reply, errReply := s.handleGetWorkRPC(cs)
 		if errReply != nil {
 			return cs.sendSSLTCPError(req.Id, errReply)
 		}
 		return cs.sendSSLTCPResult(req.Id, &reply)
-	case "eth_submitWork":
+	case "vap_submitWork":
 		var params []string
 		err := json.Unmarshal(req.Params, &params)
 		if err != nil {
@@ -143,7 +143,7 @@ func (cs *Session) handleSSLTCPMessage(s *ProxyServer, req *StratumReq) error {
 			return cs.sendSSLTCPError(req.Id, errReply)
 		}
 		return cs.sendSSLTCPResult(req.Id, &reply)
-	case "eth_submitHashrate":
+	case "vap_submitHashrate":
 		return cs.sendSSLTCPResult(req.Id, true)
 	default:
 		errReply := s.handleUnknownRPC(cs, req.Method)

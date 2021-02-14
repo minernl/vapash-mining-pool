@@ -387,9 +387,9 @@ func TestStoreExchangeData(t *testing.T) {
 
 
 	m :=map[string]string{
-		"id": "ethereum",
-		"name": "Ethereum",
-		"symbol": "ETH",
+		"id": "vapory",
+		"name": "Vapory",
+		"symbol": "VAP",
 		"rank": "2",
 		"price_usd": "311.984",
 		"price_btc": "0.0823755",
@@ -448,7 +448,7 @@ func TestStoreExchangeData(t *testing.T) {
 
 func TestGetExchangeData(t *testing.T) {
 
-	cmd := r.client.HGetAllMap(r.formatKey("exchange", "ETH" ))
+	cmd := r.client.HGetAllMap(r.formatKey("exchange", "VAP" ))
 	result,err := cmd.Result()
 
 	log.Printf("Writing Exchange Data : %v ",result)

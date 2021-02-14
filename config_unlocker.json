@@ -1,9 +1,9 @@
 {
 	"threads": 2,
-	"coin": "ethereum-pplns",
+	"coin": "vapory-pplns",
 	"name": "main",
 	"pplns": 1000000,
-	"coin-name":"ETH",
+	"coin-name":"VAP",
 
 	"proxy": {
 		"enabled": false,
@@ -127,7 +127,7 @@
 	},
 
 	"newrelicEnabled": false,
-	"newrelicName": "PROXY01_ETH_MUMBAI",
+	"newrelicName": "PROXY01_VAP_MUMBAI",
 	"newrelicKey": "b30cd005408cbe2bcef6e081dc0a7ea2fe6c6a18",
 	"newrelicVerbose": false
 }

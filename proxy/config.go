@@ -1,11 +1,11 @@
 package proxy
 
 import (
-	"github.com/techievee/ethash-mining-pool/api"
-	"github.com/techievee/ethash-mining-pool/exchange"
-	"github.com/techievee/ethash-mining-pool/payouts"
-	"github.com/techievee/ethash-mining-pool/policy"
-	"github.com/techievee/ethash-mining-pool/storage"
+	"github.com/vapory-mining/vapash-mining-pool/api"
+	"github.com/vapory-mining/vapash-mining-pool/exchange"
+	"github.com/vapory-mining/vapash-mining-pool/payouts"
+	"github.com/vapory-mining/vapash-mining-pool/policy"
+	"github.com/vapory-mining/vapash-mining-pool/storage"
 )
 
 type Config struct {

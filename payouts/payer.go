@@ -8,11 +8,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/vaporyco/go-vapory/common/hexutil"
 
-	"github.com/techievee/ethash-mining-pool/rpc"
-	"github.com/techievee/ethash-mining-pool/storage"
-	"github.com/techievee/ethash-mining-pool/util"
+	"github.com/vapory-mining/vapash-mining-pool/rpc"
+	"github.com/vapory-mining/vapash-mining-pool/storage"
+	"github.com/vapory-mining/vapash-mining-pool/util"
 )
 
 const txCheckInterval = 5 * time.Second
